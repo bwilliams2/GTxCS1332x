@@ -29,7 +29,8 @@ public class ExternalChainingHashMap<K, V> {
     /**
      * Constructs a new ExternalChainingHashMap with an initial capacity of INITIAL_CAPACITY.
      */
-    public ExternalChainingHashMap() {
+	@SuppressWarnings("unchecked")
+	public ExternalChainingHashMap() {
         //DO NOT MODIFY THIS METHOD!
         table = (ExternalChainingMapEntry<K, V>[]) new ExternalChainingMapEntry[INITIAL_CAPACITY];
     }
@@ -79,8 +80,8 @@ public class ExternalChainingHashMap<K, V> {
     	if (key == null || value == null) {
     		throw new IllegalArgumentException();
     	}
-    	if ((double)(size + 1)/table.length >= MAX_LOAD_FACTOR) {
-    		resizeBackingTable(table.length * 2 + 1);
+    	if (( (double)(size + 1) / (double)table.length) >= MAX_LOAD_FACTOR) {
+    		resizeBackingTable((table.length * 2) + 1);
     	}
     	V oldValue = addItem(key, value, table);
     	if (oldValue == null) {
@@ -96,19 +97,20 @@ public class ExternalChainingHashMap<K, V> {
     	ExternalChainingMapEntry<K, V> node = thisTable[startInd];
     	if (node == null) {
     		thisTable[startInd] = newEntry;
-    	} else if (node.getKey() == key){
+    	} else if (node.getKey().equals(key)){
     		oldValue = node.getValue();
     		node.setValue(value);
     	} else {
     		while (node.getNext() != null) {
     			node = node.getNext();
-    			if (node.getKey() == key) {
+    			if (node.getKey().equals(key)) {
     				oldValue = node.getValue();
     				node.setValue(value);
     				return oldValue;
     			}
     		}
-    		node.setNext(newEntry);
+    		newEntry.setNext(thisTable[startInd]);
+    		thisTable[startInd] = newEntry;
     	}
     	return oldValue;
     }
@@ -138,7 +140,7 @@ public class ExternalChainingHashMap<K, V> {
     	ExternalChainingMapEntry<K, V> node = thisTable[startInd];
     	if (node == null) {
     		throw new NoSuchElementException();
-    	} else if (node.getKey() == key){
+    	} else if (node.getKey().equals(key)){
     		oldValue = node.getValue();
     		thisTable[startInd] = node.getNext();
     		node.setNext(null);
@@ -146,7 +148,7 @@ public class ExternalChainingHashMap<K, V> {
         	ExternalChainingMapEntry<K, V> oldNode = thisTable[startInd];
     		while (oldNode.getNext() != null) {
     			node = oldNode.getNext();
-    			if (node.getKey() == key) {
+    			if (node.getKey().equals(key)) {
     				oldValue = node.getValue();
     				oldNode.setNext(node.getNext());
     				return oldValue;
@@ -187,6 +189,7 @@ public class ExternalChainingHashMap<K, V> {
     			}
     		}
     	}
+    	table = newTable;
     }
 
     /**
