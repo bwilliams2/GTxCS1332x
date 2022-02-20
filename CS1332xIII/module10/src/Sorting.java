@@ -61,11 +61,25 @@ public class Sorting {
      * @param arr        The array that must be sorted after the method runs.
      * @param comparator The Comparator used to compare the data in arr.
      */
-    public static <T> void selectionSort(T[] arr, Comparator<T> comparator) {
+    public static <T> void selectionSort2(T[] arr, Comparator<T> comparator) {
         T temp = null;
         int currMaxInd = -1;
         for (int i = arr.length - 1; i >= 0; i--) {
         	currMaxInd = 0;
+        	for (int j = 0; j <= i; j++) {
+        		if (comparator.compare(arr[j], arr[currMaxInd]) > 0) {
+        			currMaxInd = j;
+        		}
+        	}
+        	temp = arr[i];
+        	arr[i] = arr[currMaxInd];
+        	arr[currMaxInd] = temp;
+        }
+    }
+    public static <T> void selectionSort(T[] arr, Comparator<T> comparator) {
+        T temp = null;
+        for (int i = arr.length - 1; i > 0; i--) {
+        	int currMaxInd = i;
         	for (int j = 0; j < i; j++) {
         		if (comparator.compare(arr[j], arr[currMaxInd]) > 0) {
         			currMaxInd = j;
@@ -96,6 +110,15 @@ public class Sorting {
      * @param comparator The Comparator used to compare the data in arr.
      */
     public static <T> void insertionSort(T[] arr, Comparator<T> comparator) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        T temp = null;
+        for (int i = 1; i < arr.length; i++) {
+        	int n = i;
+        	while (n != 0 && comparator.compare(arr[n],arr[n-1]) < 0) {
+        		temp = arr[n - 1];
+        		arr[n - 1] = arr[n];
+        		arr[n] = temp;
+        		n -= 1;
+        	}
+        }
     }
 }

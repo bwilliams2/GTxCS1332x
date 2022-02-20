@@ -104,6 +104,7 @@ public class AVL2<T extends Comparable<? super T>> {
      		nodeData = root.getData();
  	    	if (root.getLeft() == null && root.getRight() == null) {
  	    		root = null;
+ 	    		return nodeData;
  	    	} else if (root.getLeft() != null && root.getRight() == null) {
  	    		root = root.getLeft();
  	    	} else if (root.getRight() != null && root.getLeft() == null) {
