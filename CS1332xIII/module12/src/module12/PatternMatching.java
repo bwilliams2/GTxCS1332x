@@ -26,7 +26,11 @@ public class PatternMatching {
      * @return           List containing the starting index for each match found.
      */
     public static List<Integer> boyerMoore(CharSequence pattern, CharSequence text, CharacterComparator comparator) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        Map<Character, Integer> table = buildLastTable(pattern);
+        
+        
+        
+
     }
 
     /**
@@ -55,6 +59,13 @@ public class PatternMatching {
      *         to their last occurrence in the pattern.
      */
     public static Map<Character, Integer> buildLastTable(CharSequence pattern) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        Map<Character, Integer> table = new HashMap<Character, Integer>();
+        
+        for (int i=0; i < pattern.length(); i++) {
+        	table.put(pattern.charAt(i), i);
+        }
+        
+        return table;
+        
     }
 }
