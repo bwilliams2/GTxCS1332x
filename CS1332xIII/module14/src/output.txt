@@ -1,0 +1,159 @@
+
+[Executed at: Sat Mar 5 18:01:39 PST 2022]
+
+============================================================
+GraphAlgorithms.java successfully compiled.
+============================================================
+Tests Passed: 2 / 15
+
+[Test Failure: prims] [-0.67] : MST was found when no MST should have been found. 
+
+[Test Failure: prims] [-0.67] : MST was found when no MST should have been found. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from b to a with weight 1
+	Edge from a to b with weight 1
+	Edge from c to b with weight 2
+	Edge from b to c with weight 2
+	Edge from d to c with weight 3
+	Edge from c to d with weight 3
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from c to b with weight 3
+	Edge from b to c with weight 3
+	Edge from b to a with weight 1
+	Edge from a to b with weight 1
+	Edge from a to d with weight 2
+	Edge from d to a with weight 2
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from a to b with weight 1
+	Edge from b to a with weight 1
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from b to d with weight 4
+	Edge from d to b with weight 4
+	Edge from a to c with weight 1
+	Edge from c to a with weight 1
+	Edge from d to a with weight 2
+	Edge from a to d with weight 2
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from b to c with weight -2
+	Edge from c to b with weight -2
+	Edge from b to a with weight -1
+	Edge from a to b with weight -1
+	Edge from a to d with weight 2
+	Edge from d to a with weight 2
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from c to d with weight -6
+	Edge from d to c with weight -6
+	Edge from a to b with weight -8
+	Edge from b to a with weight -8
+	Edge from b to c with weight -5
+	Edge from c to b with weight -5
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from a to b with weight 1
+	Edge from b to a with weight 1
+	Edge from b to d with weight 4
+	Edge from d to b with weight 4
+	Edge from c to a with weight 1
+	Edge from a to c with weight 1
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from c to a with weight 2
+	Edge from a to c with weight 2
+	Edge from c to f with weight 5
+	Edge from f to c with weight 5
+	Edge from g to c with weight 6
+	Edge from c to g with weight 6
+	Edge from a to b with weight 1
+	Edge from b to a with weight 1
+	Edge from b to e with weight 4
+	Edge from e to b with weight 4
+	Edge from b to d with weight 3
+	Edge from d to b with weight 3
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from a to b with weight 3
+	Edge from b to a with weight 3
+	Edge from b to c with weight 0
+	Edge from c to b with weight 0
+	Edge from b to d with weight 4
+	Edge from d to b with weight 4
+	Edge from d to e with weight 2
+	Edge from e to d with weight 2
+	Edge from c to f with weight 1
+	Edge from f to c with weight 1
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: prims] [-0.67] : Unexpected content in MST.
+
+Expected (in no particular order):
+	Edge from g to c with weight 5
+	Edge from c to g with weight 5
+	Edge from c to f with weight 4
+	Edge from f to c with weight 4
+	Edge from b to a with weight 1
+	Edge from a to b with weight 1
+	Edge from e to b with weight 3
+	Edge from b to e with weight 3
+	Edge from b to d with weight 2
+	Edge from d to b with weight 2
+	Edge from f to e with weight 6
+	Edge from e to f with weight 6
+
+Actual (in no particular order):
+Empty MST. 
+
+[Test Failure: unmodified] [-0.67] : Graph structure could not be validated for the following method(s) due to early test failure(s): prims. 
+
+
+Score: 1.33 / 10.0
+============================================================
