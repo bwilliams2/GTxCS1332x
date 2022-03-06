@@ -1,4 +1,3 @@
-package module12;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -28,9 +27,29 @@ public class PatternMatching {
     public static List<Integer> boyerMoore(CharSequence pattern, CharSequence text, CharacterComparator comparator) {
         Map<Character, Integer> table = buildLastTable(pattern);
         
+        int textPos = 0;
         
+        List<Integer> patterns = new ArrayList<Integer>();
         
-
+        while (textPos <= text.length() - pattern.length()) {
+        	int n = pattern.length() - 1;
+        	while (n >= 0 && comparator.compare(text.charAt(textPos + n),pattern.charAt(n)) == 0) {
+        		n -= 1;
+        	}
+    		if (n == -1) {
+    			patterns.add(textPos);
+    			textPos += 1;
+    		} else {
+    			int shift = table.getOrDefault(text.charAt(textPos + n), -1);
+    			if (shift < n) {
+        			textPos += n - shift;
+    			} else {
+    				textPos += 1;
+    			}
+    		}
+        }
+        
+        return patterns;
     }
 
     /**
